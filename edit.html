@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.101.0">
+    <title>Starter Template · Bootstrap v4.6</title>
+    <style>
+    .center-form {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+    form {
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+
+    <link rel = "stylesheet" href="formal.css">
+
+    <script>
+      function checkValue(){
+
+        var user = document.formX.uname;
+        var title = document.formX.title;
+        var report = document.formX.report;
+
+        if(user.value == ''){
+           alert("작성자 명을 입력하세요!");
+           user.focus(); 
+            return;
+        }
+
+        if(title.value == ''){
+           alert("책 제목을 입력하세요!");
+           title.focus(); 
+            return;
+        }
+
+        if(report.value == ''){
+           alert("감상문 내용을 입력하세요!");
+           title.focus(); 
+            return;
+        }
+
+        
+        document.formX.submit();
+
+        alert("게시물이 수정할까요?");
+        return;
+      }
+    </script>
+  </head>
+  <body>
+    
+<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+  <a class="navbar-brand ml-auto" href="index.html"> Book Report</a>
+  <img src="./icon/Book.png" alt="icon">
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="add.html">감상문 작성하기<span class="sr-only"></span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">한눈에 보기</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+      <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+<div class="center-form">
+    <form name = "formX" action="form_ok.php" method="post">
+        <fieldset style="width: 500px; margin: 5px;">
+            <legend>감상문 수정</legend>
+
+            <label for="uname"><span>*</span>작성자 :</label><br>
+            <input type="text" id="uname" name="uname"  ><br><br>
+            
+            <label for="title"><span>*</span>책 제목 :</label>
+            <input type="text" id="title" name="title" >
+
+            <label for="author">작가명 :</label>
+            <input type="text" id="author" name="author"><br>
+
+            분야 : 
+            <select name="type">
+                <option value="1">총류</option>
+                <option value="2">철학</option>
+                <option value="3">종교</option>
+                <option value="4">사회과학</option>
+                <option value="5">순수과학</option>
+                <option value="6">기술과학</option>
+                <option value="7">예술</option>
+                <option value="8">언어</option>
+                <option value="9">문학</option>
+                <option value="10">역사</option>
+            </select><br><br>
+
+            <span>*</span>감상문 내용:<br>
+            <textarea name="report" id="report" cols="50" rows="7"></textarea>
+            <br><br>
+
+            수정 날짜:
+            <input type="date" min="1950-01-01" max="2023-12-31" name="fromdate" ><br>
+
+        </fieldset>
+
+        <input type="button" value="수정" onclick="checkValue()"> <input type="reset" value="취소">
+    </form>
+</div>
+</body>
+</html>

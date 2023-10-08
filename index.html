@@ -19,17 +19,17 @@
 <body>
 
 <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-    <a class="navbar-brand ml-auto" href="index.html"> Book Report</a>
+    <a class="navbar-brand ml-auto" href="index.html"> Book Report(Home)</a>
     <img src="./icon/Book.png" alt="icon">
   </button>
 
   <div class="collapse navbar-collapse" id="navbarsExampleDefault">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="add.html">감상문 작성하기<span class="sr-only"></span></a>
+        <a class="nav-link" href="add.html">감상문 작성하기(Add)<span class="sr-only"></span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">한눈에 보기</a>
+        <a class="nav-link" href="view.html">한눈에 보기(View)</a>
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
@@ -40,8 +40,13 @@
 </nav>
 
 <main role="main" class="container">
+  <div class="starter-template">
+    <h2>독서 감상문 작성하기</h2>
+    <p class="lead">왼쪽 상단의 감상문 작성하기를 통해 감상문을 작성할 수 있으며, 그동안의 감상문을 한눈에 보기를 통해 보실 수 있습니다.</p>
+  </div>
   
   <div class="table-responsive">
+    <h3>작성한 독서 감상문 목록</h3>
     <table class="table table-striped table-sm">
       <thead>
         <tr>
@@ -63,7 +68,62 @@
           <td>
             <button class="btn btn-primary btn-sm edit-button" onclick="location.href='edit.html'">수정</button>
             <button class="btn btn-danger btn-sm delete-button" onclick="delete_list()">삭제</button>
-        </td>
+          </td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>이방인</td>
+          <td>주인공의 비극적인 죽음을 통해서 삶에 대한 의미를... </td>
+          <td>김하진</td>
+          <td>2023.10.08</td>
+          <td>
+            <button class="btn btn-primary btn-sm edit-button" onclick="location.href='edit.html'">수정</button>
+            <button class="btn btn-danger btn-sm delete-button" onclick="delete_list()">삭제</button>
+          </td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>이방인</td>
+          <td>주인공의 비극적인 죽음을 통해서 삶에 대한 의미를... </td>
+          <td>김하진</td>
+          <td>2023.10.08</td>
+          <td>
+            <button class="btn btn-primary btn-sm edit-button" onclick="location.href='edit.html'">수정</button>
+            <button class="btn btn-danger btn-sm delete-button" onclick="delete_list()">삭제</button>
+          </td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>이방인</td>
+          <td>주인공의 비극적인 죽음을 통해서 삶에 대한 의미를... </td>
+          <td>김하진</td>
+          <td>2023.10.08</td>
+          <td>
+            <button class="btn btn-primary btn-sm edit-button" onclick="location.href='edit.html'">수정</button>
+            <button class="btn btn-danger btn-sm delete-button" onclick="delete_list()">삭제</button>
+          </td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>이방인</td>
+          <td>주인공의 비극적인 죽음을 통해서 삶에 대한 의미를... </td>
+          <td>김하진</td>
+          <td>2023.10.08</td>
+          <td>
+            <button class="btn btn-primary btn-sm edit-button" onclick="location.href='edit.html'">수정</button>
+            <button class="btn btn-danger btn-sm delete-button" onclick="delete_list()">삭제</button>
+          </td>
+        </tr>
+        <tr>
+          <td>6</td>
+          <td>이방인</td>
+          <td>주인공의 비극적인 죽음을 통해서 삶에 대한 의미를... </td>
+          <td>김하진</td>
+          <td>2023.10.08</td>
+          <td>
+            <button class="btn btn-primary btn-sm edit-button" onclick="location.href='edit.html'">수정</button>
+            <button class="btn btn-danger btn-sm delete-button" onclick="delete_list()">삭제</button>
+          </td>
         </tr>
       </tbody>
     </table>
