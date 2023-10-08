@@ -36,7 +36,11 @@
     margin-bottom: 0;
     list-style: none;
   }
-
+  li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+  }
+  
   .form-inline {
     display: flex;
     flex-wrap: wrap;
