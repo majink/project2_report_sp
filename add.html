@@ -8,85 +8,6 @@
     <meta name="generator" content="Hugo 0.101.0">
     <title>Starter Template · Bootstrap v4.6</title>
     <style>
-      .fixed-top {
-        position: fixed;
-        top: 0;
-        right: 0;
-        left: 0;
-        z-index: 1030;
-      }
-      .bg-dark {
-        background-color: #343a40!important;
-      }
-      .navbar {
-        position: relative;
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: space-between;
-        padding-top: 0.5rem;
-        padding-right: 1rem;
-        padding-bottom: 0.5rem;
-        padding-left: 1rem;
-      }
-      .navbar-toggler-icon {
-        display: inline-block;
-        width: 1.5em;
-        height: 1.5em;
-        vertical-align: middle;
-        content: "";
-      }
-      .navbar-brand {
-        display: inline-block;
-        padding-top: .3125rem;
-        padding-bottom: .3125rem;
-        margin-right: 1rem;
-        font-size: 1.25rem;
-        line-height: inherit;
-        white-space: nowrap;
-        color: #fff;
-      }
-      .navbar-nav {
-        display: flex;
-        flex-direction: column;
-        padding-left: 0;
-        margin-bottom: 0;
-        list-style: none;
-      }
-
-      .form-inline {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-      }
-      a {
-        color: #007bff;
-        text-decoration: none;
-        background-color: transparent;
-      }
-      .navbar-dark .navbar-toggler {
-        color: rgba(255,255,255,.5);
-        border-color: rgba(255,255,255,.1);
-      }
-      .navbar-toggler {
-        padding: .25rem .75rem;
-        font-size: 1.25rem;
-        line-height: 1;
-        background-color: transparent;
-        border: 1px solid transparent;
-        border-radius: .25rem;
-      }
-      body {
-        margin: 0;
-        padding: 0;
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-        font-size: 1rem;
-        font-weight: 400;
-        line-height: 1.5;
-        color: #212529;
-        text-align: left;
-        background-color: #fff;
-    }
     .center-form {
             display: flex;
             justify-content: center;
@@ -98,18 +19,53 @@
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
     </style>
+
+    <link rel = "stylesheet" href="formal.css">
+
+    <script>
+      function checkValue(){
+
+        var user = document.formX.uname;
+        var title = document.formX.title;
+        var report = document.formX.report;
+
+        if(user.value == ''){
+           alert("작성자 명을 입력하세요!");
+           user.focus(); //아이디에 커서가 있도록 하기
+            return;
+        }
+
+        if(title.value == ''){
+           alert("책 제목을 입력하세요!");
+           title.focus(); //아이디에 커서가 있도록 하기
+            return;
+        }
+
+        if(report.value == ''){
+           alert("감상문 내용을 입력하세요!");
+           title.focus(); //아이디에 커서가 있도록 하기
+            return;
+        }
+
+        
+        document.formX.submit();
+
+        alert("게시물이 추가됩니다.");
+        return;
+      }
+    </script>
   </head>
   <body>
     
 <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-  <a class="navbar-brand ml-auto" href="#"> Book Report</a>
+  <a class="navbar-brand ml-auto" href="index.html"> Book Report</a>
   <img src="./icon/Book.png" alt="icon">
   </button>
 
   <div class="collapse navbar-collapse" id="navbarsExampleDefault">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#">감상문 작성하기<span class="sr-only"></span></a>
+        <a class="nav-link" href="add.html">감상문 작성하기<span class="sr-only"></span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">한눈에 보기</a>
@@ -122,18 +78,18 @@
   </div>
 </nav>
 <div class="center-form">
-    <form action="form_ok.php" method="post">
+    <form name = "formX" action="form_ok.php" method="post">
         <fieldset style="width: 500px; margin: 5px;">
             <legend>감상문 작성</legend>
 
             <label for="uname"><span>*</span>작성자 :</label><br>
-            <input type="text" id="uname" name="uname" placeholder="작성자 이름을 입력" required><br><br>
+            <input type="text" id="uname" name="uname" placeholder="작성자 이름을 입력" ><br><br>
             
             <label for="title"><span>*</span>책 제목 :</label>
-            <input type="text" id="title" name="title" required>
+            <input type="text" id="title" name="title">
 
             <label for="author">작가명 :</label>
-            <input type="text" id="author" name="author" required><br>
+            <input type="text" id="author" name="author" ><br>
 
             분야 : 
             <select name="type">
@@ -149,20 +105,16 @@
                 <option value="10">역사</option>
             </select><br><br>
 
-            감상문 내용:<br>
-            <textarea name="context" id="introduce" cols="50" rows="7" required></textarea>
+            <span>*</span>감상문 내용:<br>
+            <textarea name="report" id="report" cols="50" rows="7" ></textarea>
             <br><br>
 
             작성 날짜:
             <input type="date" min="1950-01-01" max="2023-12-31" name="fromdate"><br>
 
-
-            <label for="pwd"><span>*</span>게시물 비밀번호:</label>
-            <input type="password" id="pwd" name="pwd" placeholder="4자 이상 입력" required><br>
-
         </fieldset>
 
-        <input type="submit" value="저장"> <input type="reset" value="취소">
+        <input type="button" value="추가" onclick="checkValue()"> <input type="reset" value="취소">
     </form>
 </div>
 </body>
