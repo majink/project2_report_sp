@@ -8,7 +8,14 @@
     <meta name="generator" content="Hugo 0.101.0">
     <title>Starter Template · Bootstrap v4.6</title>
     <link rel="stylesheet" href="formal.css">
-</head>
+  </head>
+
+  <script>
+    function delete_list(){
+      alert("게시물을 삭제할까요?");
+      return;
+    }
+  </script>
 <body>
 
 <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
@@ -43,10 +50,21 @@
           <th>Content</th>
           <th>Writer</th>
           <th>Date</th>
+          <th>Menu</th>
         </tr>
       </thead>
       <tbody>
-        <!-- 이 부분에 데이터를 추가할 예정 -->
+        <tr>
+          <td>1</td>
+          <td>이방인</td>
+          <td>주인공의 비극적인 죽음을 통해서 삶에 대한 의미를... </td>
+          <td>김하진</td>
+          <td>2023.10.08</td>
+          <td>
+            <button class="btn btn-primary btn-sm edit-button" onclick="location.href='edit.html'">수정</button>
+            <button class="btn btn-danger btn-sm delete-button" onclick="delete_list()">삭제</button>
+        </td>
+        </tr>
       </tbody>
     </table>
   </div>
