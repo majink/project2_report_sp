@@ -19,13 +19,6 @@
     padding-bottom: 0.5rem;
     padding-left: 1rem;
   }
-  .navbar-toggler-icon {
-    display: inline-block;
-    width: 1.5em;
-    height: 1.5em;
-    vertical-align: middle;
-    content: "";
-  }
   .navbar-brand {
     display: inline-block;
     padding-top: .3125rem;
@@ -70,10 +63,39 @@
     padding: 3rem 1.5rem;
     text-align: center;
   }
+  .table {
+    width: 100%;
+    margin-bottom: 1rem;
+    color: #212529;
+  }
+  table {
+    display: table;
+    border-collapse: collapse;
+    text-indent: initial;
+    border-spacing: 2px;
+    border-color: gray;
+  }
   .table-responsive {
     padding: 3rem 1.5rem;
     text-align: center;
   }
+  thead {
+    display: table-header-group;
+    vertical-align: middle;
+    border-color: inherit;
+  }
+  tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+  }
+  .table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(0,0,0,.05);
+  }
+  .table thead th {
+    vertical-align: bottom;
+    border-bottom: 2px solid #dee2e6;
+  } 
   body {
     margin: 0;
     padding: 0;
