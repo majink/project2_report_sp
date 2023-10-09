@@ -1,6 +1,6 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
@@ -12,15 +12,17 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 100vh;
         }
     form {
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
+    table {
+      border-bottom: 1px solid #ccc;
+    }
     </style>
 
-    <link rel = "stylesheet" href="formal.css">
+    <link rel="stylesheet" href="formal.css">
 
     <script>
       function checkValue(){
@@ -31,31 +33,30 @@
 
         if(user.value == ''){
            alert("작성자 명을 입력하세요!");
-           user.focus(); 
+           user.focus();
             return;
         }
 
         if(title.value == ''){
            alert("책 제목을 입력하세요!");
-           title.focus(); 
+           title.focus();
             return;
         }
 
         if(report.value == ''){
            alert("감상문 내용을 입력하세요!");
-           title.focus(); 
+           title.focus();
             return;
         }
 
-        
         document.formX.submit();
 
         alert("게시물이 수정할까요?");
         return;
       }
     </script>
-  </head>
-  <body>
+</head>
+<body>
     
 <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
   <a class="navbar-brand ml-auto" href="index.html"> Book Report</a>
@@ -77,9 +78,34 @@
     </form>
   </div>
 </nav>
+
+<table class="table table-striped table-sm">
+  <h3>[기존 작성 내용] </h3>
+  <thead>
+    <tr>
+      <th>작성자</th>
+      <th>책 제목</th>
+      <th>작가</th>
+      <th>분야</th>
+      <th>감상문 내용</th>
+      <th>작성 날짜</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>김하진</td>
+      <td>이방인</td>
+      <td>알베르 카뮈</td>
+      <td>문학</td>
+      <td>주인공의 비극적인 죽음을 통해서 삶에 대한 의미를 다시 한번 생각할 수 있었다.</td>
+      <td>2023.10.08</td>
+    </tr>
+  </tbody>
+</table>
+
 <div class="center-form">
-    <form name = "formX" action="form_ok.php" method="post">
-        <fieldset style="width: 500px; margin: 5px;">
+     <form name = "formX" action="form_ok.php" method="post">
+        <fieldset style="width: 800px; margin: 1px;">
             <legend>감상문 수정</legend>
 
             <label for="uname"><span>*</span>작성자 :</label><br>
@@ -88,7 +114,7 @@
             <label for="title"><span>*</span>책 제목 :</label>
             <input type="text" id="title" name="title" >
 
-            <label for="author">작가명 :</label>
+            <label for="author">작가 :</label>
             <input type="text" id="author" name="author"><br>
 
             분야 : 
@@ -106,7 +132,7 @@
             </select><br><br>
 
             <span>*</span>감상문 내용:<br>
-            <textarea name="report" id="report" cols="50" rows="7"></textarea>
+            <textarea name="report" id="report" cols="50" rows="5"></textarea>
             <br><br>
 
             수정 날짜:
